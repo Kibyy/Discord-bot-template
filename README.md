@@ -1,7 +1,9 @@
 A simple bot template for discord
+
 Um template de bot pro discord
 
 Codigo limpo e organizado, facilitado para edicao e aprimoramento
+
 Clean and simple code, making it easier for edits and upgrades
 
 Setup
@@ -20,6 +22,7 @@ Setup
 3.Config
    Create a `.env` file (copy `.env.example`) and add your `TOKEN`, `CLIENT_ID`, and `GUILD_ID`
 Crie um arquivo `.env` (copie o `.env.example`) e poe seu `TOKEN`, `CLIENT_ID`, e `GUILD_ID`
+
 4.Deploy Commands
    ```bash
    npm run deploy
