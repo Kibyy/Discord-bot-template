@@ -1,0 +1,16 @@
+{
+  "name": "discord-bot-template",
+  "version": "1.0.0",
+  "description": "A professional skeleton for a Discord bot with moderation commands",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "deploy": "node src/deploy-commands.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5"
+  },
+  "author": "",
+  "license": "ISC"
+}
