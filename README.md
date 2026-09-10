@@ -7,7 +7,6 @@ Codigo limpo e organizado, facilitado para edicao e aprimoramento
 Clean and simple code, making it easier for edits and upgrades
 
 Setup
-
 1.Clone
    ```bash
    git clone https://github.com/yourusername/discord-bot-template.git
