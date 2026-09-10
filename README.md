@@ -1,16 +1,12 @@
-<<<<<<< HEAD
 A simple bot template for discord
 
 Um template de bot pro discord
-
 Codigo limpo e organizado, facilitado para edicao e aprimoramento
 
-=======
 A simple bot template for discord, now with a full music module included
 Um template de bot pro discord, agora com um modulo de musica completo
 
 Codigo limpo e organizado, facilitado para edicao e aprimoramento
->>>>>>> 311badf (foi adiconado a capacidade de tocar musicas)
 Clean and simple code, making it easier for edits and upgrades
 
 Setup
@@ -44,9 +40,6 @@ Crie um arquivo `.env` (copie o `.env.example`) e poe seu `TOKEN`, `CLIENT_ID`, 
    ```bash
    npm start
    ```
-
-<<<<<<< HEAD
-=======
 Musica
 
 Default prefix= p! ctu muda la no env 
