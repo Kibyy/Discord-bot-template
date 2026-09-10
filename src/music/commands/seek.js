@@ -5,13 +5,15 @@ module.exports = {
     execute(message, args) {
         const queue = message.client.distube.getQueue(message.guild.id);
         if (!queue) return message.reply('there is nothing playing now');
-
-        const segundos = parseInt(args[0]);
+        const segundos = parseInt(args[0], 10);
         if (isNaN(segundos) || segundos < 0) {
-            return message.reply('please provide a valid time in seconds, e.g., seek 30');
+            return message.reply('please provide a valid time in seconds');
         }
-
-        queue.seek(segundos);
-        message.reply(`jumped to second ${segundos}`);
+        try {
+            queue.seek(segundos);
+            message.reply(`jumped to second ${segundos}`);
+        } catch (error) {
+            message.reply('could not seek to that time');
+        }
     },
 };

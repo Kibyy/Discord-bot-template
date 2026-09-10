@@ -2,29 +2,13 @@ const { Client, GatewayIntentBits, Collection } = require('discord.js');
 require('dotenv').config();
 const fs = require('node:fs');
 const path = require('node:path');
-<<<<<<< HEAD
-
-=======
 const { createDistube } = require('./music/distube');
 const { registerDistubeEvents } = require('./music/distubeEvents');
->>>>>>> 311badf (foi adiconado a capacidade de tocar musicas)
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildMessages,
         GatewayIntentBits.MessageContent,
-<<<<<<< HEAD
-        GatewayIntentBits.GuildMembers
-    ]
-});
-
-client.commands = new Collection();
-
-// Load commands
-const foldersPath = path.join(__dirname, 'commands');
-const folders = fs.readdirSync(foldersPath);
-
-=======
         GatewayIntentBits.GuildMembers,
         GatewayIntentBits.GuildVoiceStates
     ]
@@ -33,7 +17,6 @@ client.commands = new Collection();
 client.musicCommands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
 const folders = fs.readdirSync(foldersPath);
->>>>>>> 311badf (foi adiconado a capacidade de tocar musicas)
 for (const folder of folders) {
     const commandsPath = path.join(foldersPath, folder);
     const files = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
@@ -47,13 +30,7 @@ for (const folder of folders) {
         }
     }
 }
-<<<<<<< HEAD
-
-// Load events
 const eventsPath = path.join(__dirname, 'events');
-const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
-
-=======
 const musicPath = path.join(__dirname, 'music', 'commands');
 const musicFiles = fs.readdirSync(musicPath).filter(file => file.endsWith('.js'));
 for (const file of musicFiles) {
@@ -68,7 +45,6 @@ for (const file of musicFiles) {
 client.distube = createDistube(client);
 registerDistubeEvents(client.distube);
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
->>>>>>> 311badf (foi adiconado a capacidade de tocar musicas)
 for (const file of eventFiles) {
     const filePath = path.join(eventsPath, file);
     const event = require(filePath);
@@ -78,8 +54,4 @@ for (const file of eventFiles) {
         client.on(event.name, (...args) => event.execute(...args));
     }
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 311badf (foi adiconado a capacidade de tocar musicas)
 client.login(process.env.TOKEN);

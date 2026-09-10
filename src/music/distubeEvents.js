@@ -1,33 +1,30 @@
-// aqui fica so a parte de avisar no canal de texto o que ta acontecendo
-// com a fila, cada evento do distube vira uma mensagem simples
 function registerDistubeEvents(distube) {
     distube
         .on('playSong', (queue, song) => {
-            queue.textChannel?.send(`tocando agora: **${song.name}** (${song.formattedDuration})`);
+            queue.textChannel?.send(`Now playing: **${song.name}** (${song.formattedDuration})`);
         })
         .on('addSong', (queue, song) => {
-            queue.textChannel?.send(`adicionou **${song.name}** na fila`);
+            queue.textChannel?.send(`Added **${song.name}** to the queue`);
         })
         .on('addList', (queue, playlist) => {
-            queue.textChannel?.send(`adicionou a playlist **${playlist.name}** com ${playlist.songs.length} musicas`);
+            queue.textChannel?.send(`Added **${playlist.name}** with ${playlist.songs.length} songs`);
         })
         .on('error', (channel, error) => {
             console.error(error);
-            channel?.send('deu ruim tocando isso, tenta outro link ou nome');
+            channel?.send('Error');
         })
         .on('empty', channel => {
-            channel?.send('canal de voz ficou vazio, saindo');
+            channel?.send('Afk for too long, leaving');
         })
         .on('finish', queue => {
-            queue.textChannel?.send('a fila acabou');
+            queue.textChannel?.send('Queue Ended');
         })
         .on('disconnect', queue => {
-            queue.textChannel?.send('desconectei do canal de voz');
+            queue.textChannel?.send('Disconnected');
         })
         .on('initQueue', queue => {
             queue.autoplay = false;
             queue.volume = 100;
         });
 }
-
 module.exports = { registerDistubeEvents };

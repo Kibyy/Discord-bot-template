@@ -6,7 +6,6 @@ module.exports = {
         const queue = message.client.distube.getQueue(message.guild.id);
         if (!queue) return message.reply('there is nothing playing now');
         if (!queue.paused) return message.reply('it is already playing');
-
         queue.resume();
         message.reply('resumed the song');
     },

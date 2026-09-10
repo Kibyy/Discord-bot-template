@@ -5,7 +5,6 @@ module.exports = {
     async execute(message) {
         const queue = message.client.distube.getQueue(message.guild.id);
         if (!queue) return message.reply('there is nothing playing now');
-
         try {
             await queue.skip();
             message.reply('skipped to the next song');

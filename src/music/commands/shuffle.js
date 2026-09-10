@@ -5,7 +5,6 @@ module.exports = {
     execute(message) {
         const queue = message.client.distube.getQueue(message.guild.id);
         if (!queue) return message.reply('there is nothing playing now');
-
         queue.shuffle();
         message.reply('queue shuffled');
     },

@@ -2,17 +2,9 @@ const { REST, Routes } = require('discord.js');
 require('dotenv').config();
 const fs = require('node:fs');
 const path = require('node:path');
-<<<<<<< HEAD
-
 const commands = [];
 const foldersPath = path.join(__dirname, 'commands');
 const folders = fs.readdirSync(foldersPath);
-
-=======
-const commands = [];
-const foldersPath = path.join(__dirname, 'commands');
-const folders = fs.readdirSync(foldersPath);
->>>>>>> 311badf (foi adiconado a capacidade de tocar musicas)
 for (const folder of folders) {
     const commandsPath = path.join(foldersPath, folder);
     const files = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
@@ -24,13 +16,7 @@ for (const folder of folders) {
         }
     }
 }
-<<<<<<< HEAD
-
 const rest = new REST().setToken(process.env.TOKEN);
-
-=======
-const rest = new REST().setToken(process.env.TOKEN);
->>>>>>> 311badf (foi adiconado a capacidade de tocar musicas)
 (async () => {
     try {
         console.log(`Refreshing ${commands.length} slash commands...`);

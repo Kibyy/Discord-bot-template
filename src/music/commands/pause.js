@@ -6,7 +6,6 @@ module.exports = {
         const queue = message.client.distube.getQueue(message.guild.id);
         if (!queue) return message.reply('Not playing anything');
         if (queue.paused) return message.reply('Already paused');
-
         queue.pause();
         message.reply('Paused');
     },

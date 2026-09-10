@@ -16,12 +16,8 @@ module.exports = {
         const user = interaction.options.getUser('target');
         const reason = interaction.options.getString('reason') || 'No reason provided';
 
-<<<<<<< HEAD
         // Connect a database (SQLite for example) to track warns per user
-=======
-        // Connect a database (SQLite for example) to track warns
         // Conecta um SQL pra salvar os warn por usario
->>>>>>> 311badf (foi adiconado a capacidade de tocar musicas)
 
         await interaction.reply({
             content: `Warned ${user}!\n**Reason:** ${reason}\n\n*(Warns aren't saved in this template)*`,

@@ -5,7 +5,6 @@ module.exports = {
     execute(message) {
         const queue = message.client.distube.getQueue(message.guild.id);
         if (!queue) return message.reply('Not in any voice channel');
-
         queue.stop();
         message.reply('Bye');
     },
